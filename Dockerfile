@@ -1,9 +1,11 @@
-FROM openjdk:21-jdk
+FROM maven:3.9.5-eclipse-temurin-17
 
 WORKDIR /app
 
-COPY target/chatgpt-api-0.0.1-SNAPSHOT.jar /app/chatgpt-api.jar
+COPY . .
+
+RUN mvn clean package -DskipTests
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "chatgpt-api.jar"]
+CMD ["java", "-jar", "target/chatgpt-spring-api.jar"]

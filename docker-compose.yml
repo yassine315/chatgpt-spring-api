@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   chatgpt-api:
-    image: chatgpt-api:latest
+    image: chatgpt-spring-api:latest
     build:
       context: .
       dockerfile: Dockerfile
