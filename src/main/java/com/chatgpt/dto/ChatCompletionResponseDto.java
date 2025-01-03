@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatCompletionResponse {
+public class ChatCompletionResponseDto {
 
     private List<Choice> choices;
     private String model;
@@ -30,6 +30,6 @@ public class ChatCompletionResponse {
     @AllArgsConstructor
     public static class Choice {
       private int index;
-      private Message message;
+      private MessageDto message;
     }
 }

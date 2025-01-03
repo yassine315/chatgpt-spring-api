@@ -2,8 +2,8 @@ package com.chatgpt.service;
 
 import com.chatgpt.dao.ConversationDao;
 import com.chatgpt.dao.UserDao;
-import com.chatgpt.dto.ChatCompletionRequest;
-import com.chatgpt.dto.ChatCompletionResponse;
+import com.chatgpt.dto.ChatCompletionRequestDto;
+import com.chatgpt.dto.ChatCompletionResponseDto;
 import com.chatgpt.models.Conversation;
 import com.chatgpt.models.Prompt;
 import com.chatgpt.models.User;
@@ -32,9 +32,9 @@ public class ChatGptServiceImpl implements ChatGptService {
 
         RestTemplate restTemplate = getRestTemplateWithTokenSet(openaiToken);
 
-        ChatCompletionRequest request = new ChatCompletionRequest(promptText, model);
+        ChatCompletionRequestDto request = new ChatCompletionRequestDto(promptText, model);
 
-        ChatCompletionResponse response = restTemplate.postForObject(baseUrl, request, ChatCompletionResponse.class);
+        ChatCompletionResponseDto response = restTemplate.postForObject(baseUrl, request, ChatCompletionResponseDto.class);
 
         if(response != null) {
            Prompt prompt = Prompt.builder()

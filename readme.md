@@ -1,1 +1,1 @@
-## A ChatGPT API
+## ChatGPT app with Spring

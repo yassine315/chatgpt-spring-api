@@ -7,7 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Message {
-    private String role;
-    private String content;
+public class UserRequestBodyDto {
+
+    private String token;
+    private String prompt;
+    private String name;
+    private Long conversationId; // optional
+
+
 }

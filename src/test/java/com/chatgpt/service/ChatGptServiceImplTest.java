@@ -1,12 +1,11 @@
 package com.chatgpt.service;
 
 import com.chatgpt.dao.UserDao;
-import com.chatgpt.dto.ChatCompletionRequest;
-import com.chatgpt.dto.ChatCompletionResponse;
-import com.chatgpt.dto.Message;
+import com.chatgpt.dto.ChatCompletionRequestDto;
+import com.chatgpt.dto.ChatCompletionResponseDto;
+import com.chatgpt.dto.MessageDto;
 import com.chatgpt.models.User;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -47,9 +46,9 @@ class ChatGptServiceImplTest {
         String username = "testUser";
         Long conversationId = null;
 
-        ChatCompletionResponse response = getChatCompletionResponse();
+        ChatCompletionResponseDto response = getChatCompletionResponse();
 
-        when(restTemplate.postForObject(anyString(), any(ChatCompletionRequest.class), eq(ChatCompletionResponse.class)))
+        when(restTemplate.postForObject(anyString(), any(ChatCompletionRequestDto.class), eq(ChatCompletionResponseDto.class)))
                 .thenReturn(response);
 
         when(userDao.findByOpenaiToken(openaiToken)).thenReturn(null);
@@ -62,15 +61,15 @@ class ChatGptServiceImplTest {
         verify(userDao).save(any(User.class));
     }
 
-    private static ChatCompletionResponse getChatCompletionResponse() {
-        ChatCompletionResponse response = new ChatCompletionResponse();
-        ChatCompletionResponse.Choice choice = new ChatCompletionResponse.Choice();
-        Message message = new Message();
+    private static ChatCompletionResponseDto getChatCompletionResponse() {
+        ChatCompletionResponseDto response = new ChatCompletionResponseDto();
+        ChatCompletionResponseDto.Choice choice = new ChatCompletionResponseDto.Choice();
+        MessageDto message = new MessageDto();
         message.setContent("Hello, user!");
         choice.setMessage(message);
         response.setChoices(List.of(choice));
 
-        ChatCompletionResponse.Usage usage = new ChatCompletionResponse.Usage();
+        ChatCompletionResponseDto.Usage usage = new ChatCompletionResponseDto.Usage();
         usage.setPrompt_tokens(10);
         usage.setCompletion_tokens(10);
         response.setUsage(usage);

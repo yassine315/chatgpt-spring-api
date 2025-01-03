@@ -1,16 +1,11 @@
 package com.chatgpt.controller;
 
-import com.chatgpt.dto.UserRequestBody;
-import com.chatgpt.models.Conversation;
+import com.chatgpt.dto.UserRequestBodyDto;
 import com.chatgpt.service.ChatGptService;
-import com.chatgpt.service.ChatGptServiceImpl;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -20,7 +15,7 @@ public class ChatGPTController {
     final private ChatGptService service;
 
     @PostMapping("/prompts")
-    public ResponseEntity<String> chat(@RequestBody UserRequestBody request) {
+    public ResponseEntity<String> chat(@RequestBody UserRequestBodyDto request) {
         System.out.println("call Prompts");
         // service call
         String response = service.chat(
