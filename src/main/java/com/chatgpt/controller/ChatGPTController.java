@@ -16,8 +16,7 @@ public class ChatGPTController {
 
     @PostMapping("/prompts")
     public ResponseEntity<String> chat(@RequestBody UserRequestBodyDto request) {
-        System.out.println("call Prompts");
-        // service call
+
         String response = service.chat(
                 request.getToken(), request.getPrompt(), request.getName(), request.getConversationId()
         );
