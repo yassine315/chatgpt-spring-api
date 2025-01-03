@@ -8,4 +8,6 @@ public interface ChatGptService {
 
     String chat(String openaiToken, String promptText , String username, Long conversationId);
 
+    List<Conversation> conversations(String openaiToken);
+
 }

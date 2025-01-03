@@ -95,6 +95,10 @@ public class ChatGptServiceImpl implements ChatGptService {
         return null;
     }
 
+    public List<Conversation> conversations(String openAiToken) {
+        var user =  userDao.findByOpenaiToken(openAiToken);
+        return user.getConversations();
+    }
 
     private RestTemplate getRestTemplateWithTokenSet(String openaiToken) {
         RestTemplate restTemplate = new RestTemplate();
