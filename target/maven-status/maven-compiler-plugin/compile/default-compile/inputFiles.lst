@@ -1,0 +1,14 @@
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/Application.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/controller/ChatGPTController.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dao/ConversationDao.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dao/PromptDao.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dao/UserDao.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dto/ChatCompletionRequest.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dto/ChatCompletionResponse.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dto/Message.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/dto/UserRequestBody.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/models/Conversation.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/models/Prompt.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/models/User.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/service/ChatGptService.java
+/Users/mac/Documents/Visuel-Studio/chatgpt-api/src/main/java/com/chatgpt/service/ChatGptServiceImpl.java

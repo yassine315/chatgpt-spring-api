@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatgpt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chatgpt
+  template:
+    metadata:
+      labels:
+        app: chatgpt
+    spec:
+      containers:
+        - name: chatgpt
+          image: chatgpt:v2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
