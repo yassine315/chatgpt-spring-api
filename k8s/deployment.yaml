@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatgpt-spring-app
+  labels:
+    app: chatgpt-spring-app
+spec:
+  replicas: 2  # Nombre de réplicas (pods)
+  selector:
+    matchLabels:
+      app: chatgpt-spring-app
+  template:
+    metadata:
+      labels:
+        app: chatgpt-spring-app
+    spec:
+      containers:
+        - name: springboot-container
+          image: yassine315/chatgpt-spring-api:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:h2:mem:chatgpt;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+            - name: SPRING_DATASOURCE_USERNAME
+              value: sa
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: ""

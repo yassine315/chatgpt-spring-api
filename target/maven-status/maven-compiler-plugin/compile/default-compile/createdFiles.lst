@@ -1,5 +1,6 @@
 com/chatgpt/dao/UserDao.class
 com/chatgpt/dto/ChatCompletionResponseDto$Usage.class
+com/chatgpt/util/JVMInfoUtil.class
 com/chatgpt/dto/ChatCompletionResponseDto$Choice.class
 com/chatgpt/models/User.class
 com/chatgpt/models/Prompt.class
